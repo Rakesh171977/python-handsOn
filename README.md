@@ -14,3 +14,7 @@ Task 2 (6 aug 2025)
 Task 2 Output given below:
 <img width="752" height="373" alt="Screenshot 2025-08-06 102128" src="https://github.com/user-attachments/assets/6817faa5-d753-4cb4-af8b-93eadb550e93" />
 
+Task 3 (Shell handsOn)
+
+Output given below: 
+<img width="710" height="274" alt="Screenshot 2025-08-06 121732" src="https://github.com/user-attachments/assets/14420f60-acec-4c49-9a90-4f5e1fccf788" />
