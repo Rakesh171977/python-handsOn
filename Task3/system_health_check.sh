@@ -1,36 +1,39 @@
 #!/bin/bash
 
-# Shell Script: system_health_check.sh
-# Purpose: Monitor system health and report high memory usage, disk usage, and process status
+# Get current date for log filenames
+DATE=$(date +"%Y-%m-%d")
 
-# 1. Log running processes
-LOG_FILE="process_log_$(date +%F).log"
-ps aux > "$LOG_FILE"
+# ⿡ Log Running Processes
+PROCESS_LOG="process_log_${DATE}.log"
+ps aux > "$PROCESS_LOG"
+echo "✅ Running processes logged to $PROCESS_LOG"
 
-# 2. Check for High Memory Usage (>30%)
-HIGH_MEM_PROCESSES=$(ps aux --sort=-%mem | awk '$4 > 30')
+# ⿢ Check for High Memory Usage (>30%)
+HIGH_MEM_LOG="high_mem_processes.log"
+ps aux | awk '$4>30 {print}' > temp_high_mem.txt
 
-if [[ ! -z "$HIGH_MEM_PROCESSES" ]]; then
-    echo "⚠️ Warning: High memory usage detected!"
-    echo "$HIGH_MEM_PROCESSES" >> high_mem_processes.log
+if [[ -s temp_high_mem.txt ]]; then
+    echo "⚠ WARNING: Processes using more than 30% memory found!"
+    cat temp_high_mem.txt >> "$HIGH_MEM_LOG"
+else
+    echo "✅ No processes found using more than 30% memory."
+fi
+rm -f temp_high_mem.txt
+
+# ⿣ Check Disk Space on Root Partition (>80%)
+DISK_USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
+if (( DISK_USAGE > 80 )); then
+    echo "⚠ WARNING: Disk usage on / is ${DISK_USAGE}%!"
+else
+    echo "✅ Disk usage on / is ${DISK_USAGE}%."
 fi
 
-# Count how many high-mem processes
-HIGH_MEM_COUNT=$(echo "$HIGH_MEM_PROCESSES" | grep -c '^')
-
-# 3. Check disk usage on root (/)
-DISK_USAGE=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
-
-if [[ "$DISK_USAGE" -gt 80 ]]; then
-    echo "⚠️ Warning: Disk usage on / is ${DISK_USAGE}% (exceeds 80%)"
-fi
-
-# 4. Display summary
+# ⿤ Display Summary
 TOTAL_PROCESSES=$(ps aux | wc -l)
+HIGH_MEM_COUNT=$(ps aux | awk '$4>30 {print}' | wc -l)
 
-echo ""
-echo "🔍 System Health Summary:"
-echo "----------------------------"
-echo "Total running processes     : $TOTAL_PROCESSES"
-echo "High memory usage processes : $HIGH_MEM_COUNT"
-echo "Disk usage on /             : ${DISK_USAGE}%"
+echo "================ Summary ================"
+echo "Total running processes: $TOTAL_PROCESSES"
+echo "Processes using >30% memory: $HIGH_MEM_COUNT"
+echo "Disk usage on /: ${DISK_USAGE}%"
+echo "=========================================="
