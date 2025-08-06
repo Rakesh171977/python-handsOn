@@ -18,3 +18,6 @@ Task 3 (Shell handsOn)
 
 Output given below: 
 <img width="710" height="274" alt="Screenshot 2025-08-06 121732" src="https://github.com/user-attachments/assets/14420f60-acec-4c49-9a90-4f5e1fccf788" />
+<img width="1289" height="320" alt="Screenshot 2025-08-06 121953" src="https://github.com/user-attachments/assets/2f65a51f-4dd9-4899-8428-d00f0ee8bda3" />
+<img width="1220" height="322" alt="Screenshot 2025-08-06 122008" src="https://github.com/user-attachments/assets/03848124-babb-47d7-8ef1-ead44b32c183" />
+
