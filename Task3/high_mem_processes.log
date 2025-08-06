@@ -1,6 +1,14 @@
       PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2611    2426    2611      17756  cons0     197609 13:02:27 /usr/bin/bash
       978       1     978      17604  ?         197609 10:09:20 /usr/bin/mintty
-     1600       1    1600      15644  cons0     197609 12:32:05 /usr/bin/bash
-     1719    1600    1719      20660  cons0     197609 12:32:41 /usr/bin/bash
-     1723    1719    1719      12840  cons0     197609 12:32:42 /usr/bin/ps
+     2616    2611    2611      24944  cons0     197609 13:02:27 /usr/bin/bash
+     2615    2611    2611       6032  cons0     197609 13:02:27 /usr/bin/ps
+     2426       1    2426      22600  cons0     197609 12:45:58 /usr/bin/bash
+      979     978     979      18696  pty0      197609 10:09:20 /usr/bin/bash
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      978       1     978      17604  ?         197609 10:09:20 /usr/bin/mintty
+     2644    2426    2644      25928  cons0     197609 14:01:30 /usr/bin/bash
+     2649    2644    2644      27696  cons0     197609 14:01:30 /usr/bin/bash
+     2648    2644    2644      28316  cons0     197609 14:01:30 /usr/bin/ps
+     2426       1    2426      22600  cons0     197609 12:45:58 /usr/bin/bash
       979     978     979      18696  pty0      197609 10:09:20 /usr/bin/bash
