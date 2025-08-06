@@ -1,6 +1,6 @@
       PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
-     1465    1463    1463      19352  cons0     197609 12:12:01 /usr/bin/ps
       978       1     978      17604  ?         197609 10:09:20 /usr/bin/mintty
-     1463    1174    1463       8120  cons0     197609 12:12:01 /usr/bin/bash
-     1174       1    1174      21896  cons0     197609 11:58:03 /usr/bin/bash
+     1600       1    1600      15644  cons0     197609 12:32:05 /usr/bin/bash
+     1719    1600    1719      20660  cons0     197609 12:32:41 /usr/bin/bash
+     1722    1719    1719      23452  cons0     197609 12:32:42 /usr/bin/ps
       979     978     979      18696  pty0      197609 10:09:20 /usr/bin/bash
